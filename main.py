@@ -16,10 +16,22 @@ canvas = screen.getcanvas()
 root = canvas.winfo_toplevel()
 
 right_racket = Racket(400)
-right_racket_score = Score("Right", 200, 200)
+right_racket_score = Score(110, 170)
 left_racket = Racket(-400)
-left_racket_score = Score("Left", -320, 200)
+left_racket_score = Score(-130, 170)
 ball = Ball()
+
+x = 0
+y = 250
+
+line = turtle.Turtle()
+
+for _ in range(100):
+    y -= 10
+    line.setpos(x, y)
+    line.width(10)
+    line.color("white")
+    line.hideturtle()
 
 screen.listen()
 screen.onkey(right_racket.move_up, key="Up")
@@ -65,4 +77,3 @@ while its_on:
 
     if not its_on:
         break
-
